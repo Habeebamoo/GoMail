@@ -31,7 +31,6 @@ GoMail saves you the time of sending multiple emails once through your desktop a
 .\gomail.exe -a send -to "receipent's email"
 ```
 
-<<<<<<< HEAD
 4. ***To send to multiple receipients, seperate by a comma ","***
 ```bash
 .\gomail.exe -a send -to "first@gmail.com, second@gmail.com, third@gmail.com"
@@ -40,4 +39,4 @@ GoMail saves you the time of sending multiple emails once through your desktop a
 ### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
 =======
 ### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
->>>>>>> b6e0f493db7648109f2392cde989640af7ec7d67
+
