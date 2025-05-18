@@ -10,10 +10,10 @@ GoMail saves you the time of sending emails repetitive with your desktop app, in
 3. Use the application easily
 
 # Example
-### Click [myaccount](https://myaccount.google.com) and Enable 2FA in your Google account
+### Go to [myaccount.gmail.com](https://myaccount.google.com) and Enable 2FA in your Google account
 ![screenshot](assets/first.png)
 
-### Go to [google-app-password](https://myaccount.google.com/apppasswords), create an app and copy the password
+### Go to [google.apppassword.com](https://myaccount.google.com/apppasswords), create an app and copy the password
 ![screenshot](assets/second.png)
 
 # How to use
