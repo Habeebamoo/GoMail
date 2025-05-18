@@ -22,7 +22,7 @@ GoMail saves you the time of sending emails through your desktop app, instead yo
 .\gomail.exe -a save -from "youremail" -password "your-generated-app-password"
 ```
 
-### NB: you only have to go through this stress once
+### NB: Once all that has been done, you just need to do the following whenever you want to send mails
 
 2. ***Second Compose your message in the res/message.txt***
 
