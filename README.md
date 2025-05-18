@@ -1,5 +1,8 @@
 # GoMail
-GoMail is a free and convienent CLI tool for sending emails quickly
+GoMail is a free and convienent CLI tool for sending emails
+
+## Why
+GoMail saves you the time of sending emails through your desktop app, instead you can compose a short email to any recipient in less than 10 seconds
 
 # How it Works
 1. Enable 2FA authentication on your Google account
@@ -19,6 +22,8 @@ GoMail is a free and convienent CLI tool for sending emails quickly
 .\gomail.exe -a save -from "youremail" -password "your-generated-app-password"
 ```
 
+### NB: Once all that has been done, you just need to do the following whenever you want to send mails
+
 2. ***Second Compose your message in the res/message.txt***
 
 3. Third send your msg to your reciever
@@ -26,9 +31,13 @@ GoMail is a free and convienent CLI tool for sending emails quickly
 .\gomail.exe -a send -to "receipent's email"
 ```
 
+<<<<<<< HEAD
 4. ***To send to multiple receipients, seperate by a comma ","***
 ```bash
 .\gomail.exe -a send -to "first@gmail.com, second@gmail.com, third@gmail.com"
 ```
 
 ### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
+=======
+### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
+>>>>>>> b6e0f493db7648109f2392cde989640af7ec7d67
