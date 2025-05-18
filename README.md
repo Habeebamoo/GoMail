@@ -26,4 +26,9 @@ GoMail is a free and convienent CLI tool for sending emails quickly
 .\gomail.exe -a send -to "receipent's email"
 ```
 
+4. ***To send to multiple receipients, seperate by a comma ","***
+```bash
+.\gomail.exe -a send -to "first@gmail.com, second@gmail.com, third@gmail.com"
+```
+
 ### NB: you should compose your message in the ***message.txt*** in the ***res*** folder

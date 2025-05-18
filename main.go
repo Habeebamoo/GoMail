@@ -8,12 +8,19 @@ import (
 	"log"
 	"net/smtp"
 	"os"
+	"strings"
 )
 
 type Config struct {
 	Sender string `json:"sender"`
 	Password string `json:"password"`
 }
+
+var (
+	ErrReadingMsgFile = errors.New("can't read res/message.txt file")
+	ErrReadingConfigFile = errors.New("can't read config.json file")
+	ErrFormatingConfigFile = errors.New("can't format config file")
+)
 
 func readMessage() ([]byte, error) {
 	msg, err := os.ReadFile("res/message.txt")
@@ -25,7 +32,7 @@ func readMessage() ([]byte, error) {
 			_, err = os.Create("res/message.txt")
 			check(err)
 		} else {
-			return nil, errors.New("can't read res/message.txt file")
+			return nil, ErrReadingMsgFile
 		}
 	}
 
@@ -43,7 +50,7 @@ func saveCred(sender, password string) error {
 			_, err = os.Create("config.json")
 			check(err)
 		} else {
-			return errors.New("can't read config.json file")
+			return ErrReadingConfigFile
 		}
 	}
 
@@ -54,13 +61,13 @@ func saveCred(sender, password string) error {
 func getCred() (Config, error) {
 	configJson, err := os.ReadFile("config.json")
 	if err != nil {
-		return Config{}, errors.New("can't read config file")
+		return Config{}, ErrReadingConfigFile
 	}
 
 	var data Config
 	err = json.Unmarshal(configJson, &data)
 	if err != nil {
-		return Config{}, errors.New("can't format config file")
+		return Config{}, ErrFormatingConfigFile
 	}
 
 	return data, nil
@@ -107,7 +114,10 @@ func main() {
 		from := data.Sender
 		password := data.Password
 
-		to := []string{receiver}
+		to := strings.Split(receiver, ",")
+		for i := range to {
+			to[i] = strings.TrimSpace(to[i])
+		}
 
 		smtpHost := "smtp.gmail.com"
 		smtpPort := "587"
@@ -124,5 +134,7 @@ func main() {
 		}
 
 		fmt.Println("Email sent successfully")
+	default:
+		fmt.Println("Command not supported")
 	}
 }
