@@ -2,18 +2,18 @@
 GoMail is a free and convienent CLI tool for sending emails
 
 ## Why
-GoMail saves you the time of sending multiple emails once through your desktop app, instead you can compose a short email to any recipient in seconds
+GoMail saves you the time of sending emails repetitive with your desktop app, instead you can compose an email to any amount of recipient in seconds
 
-# How it Works
+# Proceedure
 1. Enable 2FA authentication on your Google account
 2. Generate an App Password from your account
-3. Use the application seamlessly
+3. Use the application easily
 
 # Example
-### Click [myaccount](https://myaccount.google.com) and Enable 2FA in your Google account
+### Go to [myaccount.gmail.com](https://myaccount.google.com) and Enable 2FA in your Google account
 ![screenshot](assets/first.png)
 
-### Go to [google-app-password](https://myaccount.google.com/apppasswords), create an app and copy the password
+### Go to [google.apppassword.com](https://myaccount.google.com/apppasswords), create an app and copy the password
 ![screenshot](assets/second.png)
 
 # How to use
@@ -21,8 +21,6 @@ GoMail saves you the time of sending multiple emails once through your desktop a
 ```bash
 .\main.exe -a save -from "youremail" -password "your-generated-app-password"
 ```
-
-### NB: Once all that has been done, you just need to do the following whenever you want to send mails
 
 2. ***Second Compose your message in the res/message.txt***
 
@@ -36,7 +34,7 @@ GoMail saves you the time of sending multiple emails once through your desktop a
 .\main.exe -a send -to "first@gmail.com, second@gmail.com, third@gmail.com"
 ```
 
-### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
-=======
-### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
+#### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
+
+#### NB: you don't need to install Go on your computer, you can just run the gomail.exe file
 
