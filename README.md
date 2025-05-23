@@ -19,7 +19,7 @@ GoMail saves you the time of sending multiple emails once through your desktop a
 # How to use
 1. First save your credentials with this command
 ```bash
-.\gomail.exe -a save -from "youremail" -password "your-generated-app-password"
+.\main.exe -a save -from "youremail" -password "your-generated-app-password"
 ```
 
 ### NB: Once all that has been done, you just need to do the following whenever you want to send mails
@@ -28,12 +28,12 @@ GoMail saves you the time of sending multiple emails once through your desktop a
 
 3. Third send your msg to your reciever
 ```bash
-.\gomail.exe -a send -to "receipent's email"
+.\main.exe -a send -to "receipent's email"
 ```
 
 4. ***To send to multiple receipients, seperate by a comma ","***
 ```bash
-.\gomail.exe -a send -to "first@gmail.com, second@gmail.com, third@gmail.com"
+.\main.exe -a send -to "first@gmail.com, second@gmail.com, third@gmail.com"
 ```
 
 ### NB: you should compose your message in the ***message.txt*** in the ***res*** folder

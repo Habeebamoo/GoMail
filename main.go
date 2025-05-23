@@ -6,14 +6,15 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"net/smtp"
 	"os"
 	"strings"
+
+	"gopkg.in/gomail.v2"
 )
 
 type Config struct {
-	Sender string `json:"sender"`
-	Password string `json:"password"`
+	Sender  string  `json:"sender"`
+	Password  string  `json:"password"`
 }
 
 var (
@@ -31,6 +32,8 @@ func readMessage() ([]byte, error) {
 
 			_, err = os.Create("res/message.txt")
 			check(err)
+			
+			return []byte("Hello"), nil
 		} else {
 			return nil, ErrReadingMsgFile
 		}
@@ -64,13 +67,13 @@ func getCred() (Config, error) {
 		return Config{}, ErrReadingConfigFile
 	}
 
-	var data Config
-	err = json.Unmarshal(configJson, &data)
+	var user Config
+	err = json.Unmarshal(configJson, &user)
 	if err != nil {
 		return Config{}, ErrFormatingConfigFile
 	}
 
-	return data, nil
+	return user, nil
 }
 
 func check(err error) {
@@ -108,28 +111,28 @@ func main() {
 			return
 		}
 
-		data, err := getCred()
+		user, err := getCred()
 		check(err)
-		
-		from := data.Sender
-		password := data.Password
 
 		to := strings.Split(receiver, ",")
-		for i := range to {
+		 for i := range to {
 			to[i] = strings.TrimSpace(to[i])
 		}
 
-		smtpHost := "smtp.gmail.com"
-		smtpPort := "587"
-
-		auth := smtp.PlainAuth("", from, password, smtpHost)
-
 		body, err := readMessage()
 		check(err)
-		msg := []byte("Subject: GoMail\r\n\r\n" + string(body))
 
-		err = smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, msg)
-		if err != nil {
+		m := gomail.NewMessage()
+		m.SetHeader("From", user.Sender)
+		m.SetHeader("To", to...)
+		m.SetHeader("Subject", "GoMail")
+		m.SetBody("text/plain", string(body))
+		
+		d := gomail.NewDialer("smtp.gmail.com", 465, user.Sender, user.Password)
+		d.SSL = true
+
+		if err := d.DialAndSend(m); err != nil {
+			fmt.Println("Couldn't send Email")
 			log.Fatal(err)
 		}
 
