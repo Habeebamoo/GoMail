@@ -22,9 +22,11 @@ GoMail saves you the time of sending emails repetitive with your desktop app, in
 .\main.exe -a save -from "youremail" -password "your-generated-app-password"
 ```
 
-2. ***Second Compose your message in the res/message.txt***
 
-3. Third send your msg to your reciever
+2. ***Second Compose your message in the res/message.txt***
+   
+
+4. Third send your msg to your reciever
 ```bash
 .\main.exe -a send -to "receipent's email"
 ```
@@ -36,5 +38,5 @@ GoMail saves you the time of sending emails repetitive with your desktop app, in
 
 #### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
 
-#### NB: you don't need to install Go on your computer, you can just run the gomail.exe file
+#### NB: you don't need to install Go on your computer, you can just run the main.exe file
 
