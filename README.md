@@ -10,14 +10,39 @@ GoMail saves you the time of sending emails repetitive with your desktop app, in
 3. Use the application easily
 
 # Example
-### Go to [myaccount.gmail.com](https://myaccount.google.com) and Enable 2FA in your Google account
+### Go to [myaccount.google.com](https://myaccount.google.com) and Enable 2FA in your Google account
 ![screenshot](assets/first.png)
 
-### Go to [google.apppassword.com](https://myaccount.google.com/apppasswords), create an app and copy the password
+### Go to [account.google.com](https://myaccount.google.com/apppasswords), create an app and copy the password
 ![screenshot](assets/second.png)
 
+## Setup
+For Linux/MacOS
+```bash
+go build -o main
+```
+
+Run with 
+```bash
+./main
+```
+
+For Windows 
+```bash
+go build -o main.exe
+```
+
+Run with
+```bash
+main.exe
+```
+OR...
+```bash
+.\main.exe
+```
+
 # How to use
-Firstly save your email address and the password gotten from Google with the command below, it will be added to the config.json file where the program will utilize
+Firstly save your email address and the password gotten from Google with the command below, it will be added to the config.json file where the program will utilize it
 
 command
 ```bash
