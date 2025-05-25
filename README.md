@@ -17,26 +17,28 @@ GoMail saves you the time of sending emails repetitive with your desktop app, in
 ![screenshot](assets/second.png)
 
 # How to use
-1. First save your credentials with this command
+Firstly save your email address and the password gotten from Google with the command below, it will be added to the config.json file where the program will utilize
+
+command
 ```bash
 .\main.exe -a save -from "youremail" -password "your-generated-app-password"
 ```
 
+Secondly, you should go into the *message.txt* file where you compose your actual message. 
 
-2. ***Second Compose your message in the res/message.txt***
-   
+*directory: res > message.txt*
 
-4. Third send your msg to your reciever
+Finally send your composed message to your receiver's email address easily with the command below
+
 ```bash
 .\main.exe -a send -to "receipent's email"
 ```
 
-4. ***To send to multiple receipients, seperate by a comma ","***
+To send to multiple receipients, seperate them by a comma ","
+
 ```bash
 .\main.exe -a send -to "first@gmail.com, second@gmail.com, third@gmail.com"
 ```
 
 #### NB: you should compose your message in the ***message.txt*** in the ***res*** folder
-
-#### NB: you don't need to install Go on your computer, you can just run the main.exe file
 
