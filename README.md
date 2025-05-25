@@ -2,7 +2,7 @@
 GoMail is a free and convienent CLI tool for sending emails
 
 ## Why
-GoMail saves you the time of sending emails repetitive with your desktop app, instead you can compose an email to any amount of recipient in seconds
+GoMail saves you the time of sending emails repetitively with your desktop app, instead you can compose an email to any amount of recipient in seconds
 
 # Proceedure
 1. Enable 2FA authentication on your Google account
