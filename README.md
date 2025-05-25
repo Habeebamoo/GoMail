@@ -27,7 +27,7 @@ Run with
 ./main
 ```
 
-For Windows 
+For Windows (It has been done for you already, No Need)
 ```bash
 go build -o main.exe
 ```
